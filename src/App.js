@@ -2,7 +2,7 @@ import { useState } from "react";
 import HomePage from "./components/HomePage"
 import RandomPage from "./components/RandomPage"
 import { TEST_GAMES } from "./TEST_GAMES"
-import { Link, NavLink, Route, Routes } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import GamePage from "./components/GamePage";
 import { Container, Nav, Navbar } from "react-bootstrap";
 
@@ -13,10 +13,10 @@ function App() {
     <div>
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand href="#home">My Board Games</Navbar.Brand>
+          <Navbar.Brand as={Link} to="/">My Board Games</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link as={NavLink} to="/">Home</Nav.Link>
-            <Nav.Link as={NavLink} to="/random">Random</Nav.Link>
+            <Nav.Link as={Link} to="/">Home</Nav.Link>
+            <Nav.Link as={Link} to="/random">Random</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
